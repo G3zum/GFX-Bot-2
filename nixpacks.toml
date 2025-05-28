@@ -1,0 +1,12 @@
+
+[phases.setup]
+nixPkgs = ["python311", "pip"]
+
+[phases.install]
+cmds = ["pip install -r requirements.txt"]
+
+[phases.build]
+cmds = ["python -c 'print("Build complete")'"]
+
+[start]
+cmd = "python gfx_trading_bot.py & python fixed_price_monitor.py & wait"
